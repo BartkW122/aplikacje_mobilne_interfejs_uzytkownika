@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        zapisz.setOnClickListener(new View.setOnClickListener(){
+        zapisz.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 String email_input=emial.getText().toString().trim();
@@ -82,7 +82,11 @@ public class MainActivity extends AppCompatActivity {
                     info.setText("pole Powtorz haslo nie moze byc puste");
                     return;
                 }
-                if(!Patterns.EMAIL_ADDRESS.matcher(email_input).matches()){
+//                if(!Patterns.EMAIL_ADDRESS.matcher(email_input).matches()){
+//                    info.setText("nie poprawny zapis maila");
+//                    return;
+//                }
+                if(!email_input.contains("@")){
                     info.setText("nie poprawny zapis maila");
                     return;
                 }
